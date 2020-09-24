@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { AuthContext } from '../contexts/AuthContext';
 
 function PrivateRoute({ component: Component, ...rest }) {
-  const isAuthenticated = useAuth();
+  const { user } = useContext(AuthContext);
+  const isAuthenticated = user.isAuthenticated;
   return(
     <Route
       {...rest}
@@ -11,7 +12,7 @@ function PrivateRoute({ component: Component, ...rest }) {
         isAuthenticated ? (
           <Component {...props} />
         ) : (
-          <Redirect  to="/signin" />
+          <Redirect  to="/" />
         )
       }
     />

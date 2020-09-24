@@ -8,7 +8,7 @@ import { SignIn } from './components/SignIn';
 import Wall from './components/Wall';
 import Members from './components/Members';
 //import SearchTopic from './components/SearchTopic';
-//import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
 import { AuthContextProvider } from './contexts/AuthContext';
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/signin" component={SignIn} />
           <Route path = "/members" component = {Members} />
-          <Route path="/wall" component={Wall} />
+          <PrivateRoute path="/wall" component={Wall} />
           
         </Switch>
       </Router>

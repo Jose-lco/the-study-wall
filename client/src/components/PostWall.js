@@ -8,7 +8,6 @@ export default () => {
     useEffect(() => {
         function fetchData() {
             axios.get("/api/posts").then((res) => {
-                console.log(JSON.stringify(res, null, 2));
                 setPosts(res.data)
             })
         }

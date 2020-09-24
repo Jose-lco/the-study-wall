@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {  useHistory } from 'react-router-dom';
-//import { AuthContext } from "../contexts/AuthContext";
+import { AuthContext } from "../contexts/AuthContext";
 import API from '../utils/API2';
 
 
 
 export const SignIn = () => {
-  //const { toggleAuth } = useContext(AuthContext);
+  const { toggleAuth } = useContext(AuthContext);
   let history = useHistory();
   const [userObject, setUserObject] = useState({
     email: "",
@@ -26,6 +26,7 @@ export const SignIn = () => {
         .then(result => {
           console.log(result)
           if (result.status === 200) {
+            toggleAuth()
             setTimeout(() => {
               history.push("/members")
           }, 1000);
