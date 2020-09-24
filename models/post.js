@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
-      title: {
+      category: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -9,18 +9,14 @@ module.exports = function(sequelize, DataTypes) {
       },
       body: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
         validate: {
           len: [1]
         }
       },
-      zoomLink: {
+      date: {
         type: DataTypes.TEXT,
-        allowNull: true
-      },
-      category: {
-        type: DataTypes.STRING,
-        defaultValue: "Personal"
+        allowNull: false
       }
     });
     return Post;

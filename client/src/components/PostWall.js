@@ -17,24 +17,25 @@ export default () => {
     return (
         <div className="post-wall">
             Study Wall Posts
-            <br/><br/>
+            <br /><br />
             <ul>
                 {posts.map(post => (
                     <div className="columns">
                         <div className="column is-1"></div>
                         <div className="posted-wall column is-9">
-                            <h3>{post.title}</h3>
                             <h4><i>{post.category}</i></h4>
+                            <br />
                             <p>{post.body}</p>
-                            {post.zoomLink ? <a href={post.zoomLink}>Zoom Meeting Link</a> : ""}
+                            <br />
+                            <p>{post.date}</p>
                         </div>
-                        <div className = "column is-1"></div>
+                        <div className="column is-1"></div>
                     </div>
                 )
                 )}
             </ul>
-            <br/>
+            <br />
         </div>
-        
+
     )
 }

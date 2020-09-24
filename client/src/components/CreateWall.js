@@ -6,10 +6,9 @@ let submitToBackend = (data) => axios.post("/api/posts", data);
 
 const CreateWall = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
-    const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
     const [category, setCategory] = useState("")
-    const [zoomLink, setZoomLink] = useState("")
+    const [date, setDate] = useState("")
 
 
 
@@ -23,12 +22,6 @@ const CreateWall = () => {
                         <form>
                             <div className="form-control">
                                 <label> Select Study Course:
-                                        <br />
-                                    <div className="form-control">
-                                        <label htmlFor="description">Title:</label>
-                                        <br />
-                                        <textarea id="wall-title" rows="1" onChange={e => setTitle(e.target.value)}></textarea>
-                                    </div>
                                     <br />
                                     <select id="select-topic" onChange={e => setCategory(e.target.value)} >
                                         <option value="HTML">Week 1 : HTML</option>
@@ -62,21 +55,16 @@ const CreateWall = () => {
                                 <textarea id="description" rows="5" onChange={e => setBody(e.target.value)}></textarea>
                             </div>
                             <div className="form-control">
-                                <label htmlFor="zoom-link">Zoom Link (optional):</label>
-                                <br />
-                                <textarea id="zoom-link" rows="1" onChange={e => setZoomLink(e.target.value)}></textarea>
-                            </div>
-                            <div className="form-control">
                                 <label htmlFor="date">Study Date:</label>
                                 <br />
-                                <input type="datetime-local" id="date"></input>
+                                <input type="datetime-local" id="date" onChange={e => setDate(e.target.value)}></input>
                             </div>
                         </form>
                     </div>
                     <br />
                     <div className="column is-11">
                         <div className="cw-submit">
-                            <button className="button is-info" onClick={() => {submitToBackend({ zoomLink, title, body, category }); setModalIsOpen(false)}}>Submit</button>
+                            <button className="button is-info" onClick={() => {submitToBackend({ date, body, category }); setModalIsOpen(false)}}>Submit</button>
                         </div>
                     </div>
                 </Modal>

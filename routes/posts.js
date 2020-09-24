@@ -29,10 +29,9 @@ app.get("/api/posts", function(req, res) {
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
     db.Post.create({
-      title: req.body.title,
-      zoomLink: req.body.zoomLink,
+      category: req.body.category,
       body: req.body.body,
-      category: req.body.category
+      date: req.body.date
     })
       .then(function(dbPost) {
         res.json(dbPost);
