@@ -1,0 +1,31 @@
+.navbar {display: inline; color: white;}
+
+.nav-comp {justify-content: center;}
+
+.open-book {margin-top: auto; text-align: center;}
+
+#logo-name {font-size: 5rem; color: #ffffff !important;}
+
+.info, .signing-in {text-align: center; font-size: 2.5rem;}
+
+.search {font-size: larger;}
+
+.create-modal {width: 600px; height: 550px; position: absolute; left: 50%; top: 50%; margin-left: -300px; margin-top: -200px; text-align: left; background-color: #e7e7e7;}
+
+.cw-title {text-align: center;}
+
+.post-wall {height: 100%;}
+
+#members-page, #signin-btn {margin-left: 45%; color: #ffffff;}
+
+.pages {display: inline; margin-left: 10%; color: #ffffff !important; font-family: 'Indie Flower', cursive; font-size: 1.5rem;}
+
+#footer {position: relative; bottom: 0; background-color: tomato; height: 75px; text-align: center;}
+
+#description {height: 125px; width: 550px;}
+
+#wall-title {width: 550px;}
+
+.posted-wall {background-color: lightgray; width: 100%; height: 125px; margin-bottom: 10px;}
+
+.cw-submit {text-align: right;}
