@@ -31,8 +31,8 @@ const Home = () => {
     return (
         <div className = "container">
             <br/>
-            <h1 className = "info">To access the study wall and all its knowledge, please sign up below!</h1>
-            <h2 className = "info">Returning learners, please sign in</h2>
+            <h2 className = "info">To access the study wall and all its knowledge, please sign up below!</h2>
+            <h3 className = "info">Returning learners, please sign in</h3>
             <br/>
             <input
             onChange={handleInputChange}
@@ -62,7 +62,7 @@ const Home = () => {
                 </button>
           
             <br/><br/>
-            <img src = {require("../Images/Desk Live Sharing.png")} alt="comic of people reading" />
+            <img src = {require("../Images/Desk-Live-Sharing.png")} alt="comic of people reading" />
         </div>
             
     );
