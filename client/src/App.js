@@ -10,10 +10,12 @@ import Members from './components/Members';
 //import SearchTopic from './components/SearchTopic';
 import PrivateRoute from './components/PrivateRoute';
 import { AuthContextProvider } from './contexts/AuthContext';
+import { PostContextProvider } from './contexts/PostContext';
 function App() {
   return (
     <div className = "App">
       <AuthContextProvider>
+        <PostContextProvider>
       <Router>
         <Navbar />
 
@@ -26,6 +28,7 @@ function App() {
         </Switch>
       </Router>
       <Footer />
+      </PostContextProvider>
       </AuthContextProvider>
     </div>
   );

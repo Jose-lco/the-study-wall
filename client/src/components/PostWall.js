@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
+import { PostContext } from '../contexts/PostContext';
 
 export default () => {
-    let [posts, setPosts] = useState([])
-
+    
+    const { addPosts, posts } = useContext(PostContext);
     // use useEffect to talk to our API and get the posts that have been posted
     useEffect(() => {
-        function fetchData() {
             axios.get("/api/posts").then((res) => {
-                setPosts(res.data)
+                addPosts(res.data)
             })
-        }
-        fetchData();
-    }, [])
+    }, [addPosts])
 
     return (
         <div className="post-wall">
