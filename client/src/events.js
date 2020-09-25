@@ -1,4 +1,4 @@
-//const now = new Date()
+
 
 export default [
   {
@@ -11,13 +11,13 @@ export default [
   {
     id: 1,
     title: 'Long Event',
-    start: new Date(2020, 8, 7),
+    start: new Date(2020, 8, 9),
     end: new Date(2020, 8, 10),
   },
 
   {
     id: 2,
     title: 'DTS STARTS',
-    start: new Date(2020, 8, 13, 0, 0, 0),
-    end: new Date(2020, 8, 20, 0, 0, 0),
+    start: new Date(Date.parse("2020-08-20T12:00")),
+    end: new Date(Date.parse("2020-08-20T13:00")),
   }]
