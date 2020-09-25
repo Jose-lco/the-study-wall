@@ -28,7 +28,8 @@ export default () => {
                       <div className="content">
                         {post.body}
                         <br/>
-                <time datetime="2016-1-1">{post.date}</time>
+                <p>{post.start}</p>
+                <p>{post.end}</p>
                       </div>
                     </div>
                     <footer className="card-footer">

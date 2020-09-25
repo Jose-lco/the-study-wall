@@ -14,7 +14,11 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      date: {
+      start: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
+      end: {
         type: DataTypes.TEXT,
         allowNull: false
       }

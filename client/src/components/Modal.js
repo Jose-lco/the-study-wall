@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
 import { PostContext } from '../contexts/PostContext';
+import API from '../utils/API';
 const Modal = () => {
-    const { isModalVisible, toggleModal } = useContext(PostContext);
+    const { isModalVisible, toggleModal, body, category, start, end, addBody, addCategory, } = useContext(PostContext);
     return (
 
         <div className={`modal ${isModalVisible ? "is-active" : ""}`}>
             <div className="modal-background"></div>
             <div className="modal-card">
                 <header className="modal-card-head">
-                    <p className="modal-card-title">Modal title</p>
+                    <p className="modal-card-title">Let's Study Together!</p>
                     <button className="delete" aria-label="close" onClick={toggleModal}></button>
                 </header>
                 <section className="modal-card-body">
@@ -16,7 +17,7 @@ const Modal = () => {
                         <div className="form-control">
                             <label> Select Study Course:
                                     <br />
-                                <select id="select-topic" >
+                                <select id="select-topic" onChange={e => addCategory(e.target.value)}>
                                     <option value="HTML">Week 1 : HTML</option>
                                     <option value="CSS">Week 2 : CSS</option>
                                     <option value="JavaScript">Week 3 : Java Script</option>
@@ -45,13 +46,12 @@ const Modal = () => {
                         <div className="form-control">
                             <label htmlFor="description">Description:</label>
                             <br />
-                            <textarea id="description" rows="5"></textarea>
+                            <textarea id="description" rows="5" onChange={e => addBody(e.target.value)}></textarea>
                         </div>
                     </form>
                 </section>
                 <footer className="modal-card-foot">
-                    <button className="button is-info">Save changes</button>
-                    <button className="button">Cancel</button>
+                    <button className="button is-info"onClick={() => API.savePost({body, category, start, end})}>Submit</button>
                 </footer>
             </div>
         </div>

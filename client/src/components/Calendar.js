@@ -13,10 +13,11 @@ const localizer = momentLocalizer(moment)
 
 
 function Basic() {
-  const { posts, toggleModal } = useContext(PostContext);
+  const { posts, toggleModal, addTime } = useContext(PostContext);
   const [study, setStudy] = useState(events)
   const handleSelect = ({ start, end }) => {
     toggleModal();
+    addTime(start, end)
   }
 
   return (

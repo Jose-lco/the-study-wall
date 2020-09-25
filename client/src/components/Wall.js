@@ -1,5 +1,4 @@
 import React from 'react';
-import CreateWall from "./CreateWall";
 import PostWall from "./PostWall";
 import SearchTopic from "./SearchTopic";
 
@@ -10,9 +9,6 @@ const Wall = () => {
             <div className="columns">
                 <div className="search column is-10">
                     <SearchTopic />
-                </div>
-                <div className="column">
-                    <CreateWall />
                 </div>
             </div>
             <div className = "columns">
