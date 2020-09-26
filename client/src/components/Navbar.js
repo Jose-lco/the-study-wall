@@ -17,7 +17,10 @@ const Navbar = () => {
                                   Sign In
                             </Link>
                             <Link to = "/wall" className="column pages">
-                                    Find a Wall
+                                    Find Wall
+                            </Link>
+                            <Link to = "/members" className="column pages">
+                                    Members
                             </Link>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Calendar, Views, momentLocalizer } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
@@ -7,9 +7,6 @@ import axios from 'axios';
 import { PostContext } from '../contexts/PostContext';
 import Modal from './Modal';
 const localizer = momentLocalizer(moment)
-
-//let allViews = Object.keys(Views).map(k => Views[k])
-
 
 
 function Basic() {
