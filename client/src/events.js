@@ -18,8 +18,8 @@ export default [
   {
     id: 2,
     title: 'DTS STARTS',
-    start: new Date("Tue, 22 Sep 2020 10:00:00 GMT"),
-    end: new Date("Tue, 22 Sep 2020 14:00:00 GMT")
+    start: new Date("9/24/2020, 10:00:00 AM"),
+    end: new Date("9/24/2020, 1:00:00 PM")
   }]
 
   

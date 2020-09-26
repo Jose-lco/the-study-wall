@@ -11,7 +11,7 @@ export default () => {
             axios.get("/api/posts").then((res) => {
                 console.log(res.data);
                 let posts = res.data.map(result => {
-                    return {...result, start: (new Date(result.start)).toUTCString(), end: (new Date(result.end)).toUTCString()}
+                    return {...result, start: (new Date(result.start)).toLocaleString(), end: (new Date(result.end)).toLocaleString()}
                 })
                 addPosts(posts)
             })
