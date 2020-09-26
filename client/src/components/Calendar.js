@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Calendar, Views, momentLocalizer } from 'react-big-calendar'
-import events from '../events'
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from 'moment';
+import axios from 'axios';
 
 import { PostContext } from '../contexts/PostContext';
 import Modal from './Modal';
@@ -13,8 +13,16 @@ const localizer = momentLocalizer(moment)
 
 
 function Basic() {
-  const { posts, toggleModal, addTime } = useContext(PostContext);
-  const [study, setStudy] = useState(events)
+  const { posts, addPosts, toggleModal, addTime } = useContext(PostContext);
+  useEffect(() => {
+    axios.get("/api/posts").then((res) => {
+      console.log(res.data);
+      let posts = res.data.map(result => {
+          return {id: result.id, title: result.category, start: new Date(result.start), end: new Date(result.end), desc: result.body}
+      })
+      addPosts(posts)
+  })
+  }, [])
   const handleSelect = ({ start, end }) => {
     toggleModal();
     addTime(start, end)
@@ -25,7 +33,7 @@ function Basic() {
       <div>
         <Calendar
           selectable
-          events={study}
+          events={posts}
           views={{
             week: true,
             day: true,}}

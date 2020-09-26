@@ -1,21 +1,17 @@
-import React, { useEffect, useContext } from 'react';
-import axios from 'axios';
+import React, { useContext } from 'react';
+
 import { PostContext } from '../contexts/PostContext';
-import { dateFnsLocalizer } from 'react-big-calendar';
+
 
 export default () => {
+   
+
+      let { posts } = useContext(PostContext);
     
-    const { addPosts, posts } = useContext(PostContext);
     // use useEffect to talk to our API and get the posts that have been posted
-    useEffect(() => {
-            axios.get("/api/posts").then((res) => {
-                console.log(res.data);
-                let posts = res.data.map(result => {
-                    return {...result, start: (new Date(result.start)).toLocaleString(), end: (new Date(result.end)).toLocaleString()}
-                })
-                addPosts(posts)
-            })
-    }, [addPosts])
+     posts = posts.map(result => {
+      return {body: result.desc, category: result.title, start: (new Date(result.start)).toLocaleString(), end: (new Date(result.end)).toLocaleString()}
+  })
 
     return (
         <div className="post-wall">
