@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import axios from 'axios';
 import { PostContext } from '../contexts/PostContext';
+import { dateFnsLocalizer } from 'react-big-calendar';
 
 export default () => {
     
@@ -8,7 +9,11 @@ export default () => {
     // use useEffect to talk to our API and get the posts that have been posted
     useEffect(() => {
             axios.get("/api/posts").then((res) => {
-                addPosts(res.data)
+                console.log(res.data);
+                let posts = res.data.map(result => {
+                    return {...result, start: (new Date(result.start)).toUTCString(), end: (new Date(result.end)).toUTCString()}
+                })
+                addPosts(posts)
             })
     }, [addPosts])
 

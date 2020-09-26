@@ -31,8 +31,8 @@ app.get("/api/posts", function(req, res) {
     db.Post.create({
       category: req.body.category,
       body: req.body.body,
-      start: req.body.start,
-      end: req.body.end
+      start: (req.body.start),
+      end: (req.body.end)
     })
       .then(function(dbPost) {
         res.json(dbPost);

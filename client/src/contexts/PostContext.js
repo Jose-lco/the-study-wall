@@ -10,7 +10,8 @@ export const PostContextProvider = ({ children }) => {
     const [start, setStart] = useState("")
     const [end, setEnd] = useState("")
     const addPosts = (data) => { 
-        setPosts(data);  
+
+        setPosts(data);
     }
     const toggleModal = () => {
         
