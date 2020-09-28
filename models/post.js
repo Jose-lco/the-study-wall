@@ -21,6 +21,10 @@ module.exports = function(sequelize, DataTypes) {
       end: {
         type: DataTypes.TEXT,
         allowNull: false
+      },
+      link: {
+        type: DataTypes.UUID,
+    defaultValue: DataTypes.UUIDV1,
       }
     });
     return Post;

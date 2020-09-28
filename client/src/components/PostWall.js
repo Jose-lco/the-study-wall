@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { v1 as uuid } from "uuid";
+
 import { PostContext } from '../contexts/PostContext';
 import { useHistory } from 'react-router-dom';
 
@@ -12,11 +12,13 @@ export default () => {
     
     // use useEffect to talk to our API and get the posts that have been posted
      posts = posts.map(result => {
-      return {body: result.desc, category: result.title, start: (new Date(result.start)).toLocaleString(), end: (new Date(result.end)).toLocaleString()}
+      return {body: result.desc, category: result.title, start: (new Date(result.start)).toLocaleString(), end: (new Date(result.end)).toLocaleString(), link: result.link}
   })
-  function create() {
-    const id = uuid();
-    history.push(`/room/${id}`);
+  
+ 
+  function create(link) {
+    
+    history.push(`/room/${link}`);
 }
 
     return (
@@ -40,7 +42,7 @@ export default () => {
                       </div>
                     </div>
                     <footer className="card-footer">
-                      <button className="card-footer-item" onClick={create}>Join Wall</button>
+                      <button className="card-footer-item" onClick={() => create(post.link)}>Join Wall</button>
                     </footer>
                   </div>
                 )

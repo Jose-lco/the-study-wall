@@ -1,5 +1,4 @@
 import React, { useState, createContext } from 'react';
-
 export const PostContext = createContext();
 
 export const PostContextProvider = ({ children }) => {
