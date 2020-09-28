@@ -7,10 +7,10 @@ import Home from './components/Home';
 import { SignIn } from './components/SignIn';
 import Wall from './components/Wall';
 import Members from './components/Members';
-//import SearchTopic from './components/SearchTopic';
 import PrivateRoute from './components/PrivateRoute';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { PostContextProvider } from './contexts/PostContext';
+import Room from './components/Room';
 function App() {
   return (
     <div className = "App">
@@ -24,7 +24,7 @@ function App() {
           <Route path="/signin" component={SignIn} />
           <PrivateRoute path = "/members" component = {Members} />
           <PrivateRoute path="/wall" component={Wall} />
-          
+          <Route path="/room/:roomID" component={Room} />
         </Switch>
       </Router>
       <Footer />
