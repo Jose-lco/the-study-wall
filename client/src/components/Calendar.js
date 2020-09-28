@@ -19,7 +19,7 @@ function Basic() {
       })
       addPosts(posts)
   })
-  }, [])
+  })
   const handleSelect = ({ start, end }) => {
     toggleModal();
     addTime(start, end)
