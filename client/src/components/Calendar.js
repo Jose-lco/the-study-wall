@@ -13,7 +13,6 @@ function Basic() {
   const { posts, addPosts, toggleModal, addTime } = useContext(PostContext);
   useEffect(() => {
     axios.get("/api/posts").then((res) => {
-      console.log(res.data);
       let posts = res.data.map(result => {
           return {id: result.id, title: result.category, start: new Date(result.start), end: new Date(result.end), desc: result.body, link: result.link}
       })
