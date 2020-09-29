@@ -52,9 +52,9 @@ yes you can make contributions to this project and report any issues. If you wou
 This project is licensed under ISC
 
 ## Acknowledgements
-I used this repository to learn about badges: 
-[dwyl repo-badges](https://github.com/dwyl/repo-badges)
-Herney Cardenas and Nick Harrison contributed to the creation of this app.
+* I used this repository to learn about badges: 
+[dwyl repo-badges](https://github.com/dwyl/repo-badges).
+* Herney Cardenas and Nick Harrison contributed to the creation of this app.
 
 ## Authors
 
