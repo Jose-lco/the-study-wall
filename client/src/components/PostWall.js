@@ -16,9 +16,16 @@ export default () => {
   })
   
  
-  function create(link, start) {
-    Date.parse(start) > Date.now() ? alert("Almost time, not quite though :(")
-    : history.push(`/room/${link}`);
+  function create(link, start, end) {
+    if(Date.parse(start) > Date.now()){
+      alert("Almost time, not quite though :(")
+    }
+      else if(Date.parse(end) < Date.now()){
+        alert("This session ended, feel free to schedule one in the calendar :)")
+      }
+      else{
+        history.push(`/room/${link}`);
+      }
 }
 
     return (
@@ -42,7 +49,7 @@ export default () => {
                       </div>
                     </div>
                     <footer className="card-footer">
-                      <button className="card-footer-item" onClick={() => create(post.link, post.start)}>Join Wall</button>
+                      <button className="card-footer-item" onClick={() => create(post.link, post.start, post.end)}>Join Wall</button>
                     </footer>
                   </div>
                 )
