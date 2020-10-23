@@ -25,6 +25,8 @@
 * simple-peer
 * UUID
 * react-big-calendar
+* Passport.js
+* Bcrypt
 
 
 ## Installation
